@@ -1,0 +1,131 @@
+<!--Session Controller-->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<style>
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+input.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+
+  content: "";
+}
+input.cmn-toggle-round + label{
+position:relative;
+    width: 50px;
+    height: 50px;
+    background-color: #3B5998;
+    color: ;
+	border-radius: 50%;
+	margin-left:2px;
+	box-shadow: 0px 0px 10px #000000;
+
+}
+input.cmn-toggle-round + label:before {
+position:absolute; 
+    width: 33px;
+    height: 33px;
+position:absolute; top:17%; left:17%;
+ border-style: solid;
+     border-color: ;
+	 border-radius: 50%;
+
+}
+
+
+input.cmn-toggle-round:checked + label:before {
+  background-color: #7396C8;
+   border-color: ;
+}
+input.cmn-toggle-round:checked + label:after {
+background-color: ;
+  margin-left: 60px;
+}
+
+
+#pos{
+	 position: relative;
+text-align: center;
+
+	
+}
+p.text1{color:#3B5998;}
+p.text2{color:#7396C8;}
+</style>
+</head>
+<body onload="textwarning()">
+<script type="text/javascript">
+function form()
+{
+	document.getElementById("refresh").submit();
+}
+</script>
+
+<div align="center">
+
+  <div class="content-wrapper">
+         <div class="container">
+      
+             <div class="row">
+                    
+                      <div class="col-md-7">
+              
+<div id="wrapper"><div class="row"><div align="center" id="pos" class="quickflip-wrapper">
+<p id="myTitle" class="text1 flip">Off</p><div  align = "center" class="switch"><input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox"><label for="cmn-toggle-1"></label></div></div></div></div>
+</div></div></div></div></div>
+<script>
+var x;
+function selectButton(x){
+document.getElementById('ico').value = x;	
+document.getElementById("select").submit();
+}
+</script>  
+<script type="text/javascript">
+$(document).ready(function() {
+    var text1 = "<p class='text1'>Off</p>";
+    var text2 = "<p class='text2'>On</p>";
+    var i = 1;
+    $("label").click(function(event) {
+        
+        i++;
+        if (i%2 != 0) {
+            $("#myTitle").html(text1);
+            $(this).css("opacity", "0,5");
+        }else {
+            $("#myTitle").html(text2);
+            $(this).css("opacity", "0,9");
+        }
+    });
+});
+ </script>
+</body>	
+</html>				
+
+
+
+
+
+
